@@ -1,10 +1,38 @@
 :root{
+    /* My Design Tokens */
+	/* Raw Color Tokens */
+	--color-dark-gray: #17191d;
+	--color-med-gray: #23262d;
+	--color-off-white: #f4f0e8;
+	--color-orange: #ff6538;
+	--color-dark-orange: #c74424;
+	--color-sage: #a6b0a0;
+	--color-violet: #9b5de5;
+	--color-yellow: #ffd166;
+
+    /* Semantic Color Tokens */
+    --color-text:var(--color-dark-gray);
+    --color-surface:var(--color-off-white);
+    --color-action:var(--color-dark-orange);
+    --color-accent:var(--color-yellow);
+    --color-border:var(--color-med-gray);
+    --color-muted:var(--color-sage);
+
+    /* Type Tokens */
+	--font-display: Tahoma, Arial, sans-serif;
+	--font-body: Helvetica, Arial, sans-serif;
+	--font-tag: "Courier New", monospace;
+
+    /* Provided Design Tokens */
+    /*
     --color-text:#404040;
     --color-surface:#fff;
     --color-action:#8c1d40;
     --color-accent:#ffc627;
     --color-border:#d0d0d0;
     --color-muted:#5c6670;
+    */
+
     --space-3:1rem;
     --radius:.5rem;
     --measure:68ch;
@@ -23,18 +51,19 @@ body{
     margin:0;
     color:var(--color-text);
     background:var(--color-surface);
-    font-family:Arial,sans-serif;
+    font-family:var(--font-body);
     line-height:1.6;
 }
 .feature-header{
     position:relative;
     padding:clamp(2rem,7vw,6rem);
     background:var(--color-action);
-    color:#fff;
+    color:var(--color-off-white);
 }
 .eyebrow{
     color:var(--color-accent);
     font-weight:700;
+    font-family:var(--font-tag);
 }
 .lede{
     max-width:var(--measure);
@@ -46,7 +75,13 @@ body{
     inset-inline-end:1rem;
     padding:.5rem;
     background:var(--color-accent);
-    color:#191919;
+    color:var(--color-dark-gray);
+    font-family:var(--font-tag);
+    font-weight:700;
+}
+h1, h2 {
+    margin-block-start:0;
+    font-family:var(--font-display);
 }
 main{
     display:grid;
@@ -98,7 +133,7 @@ img{
 .documentation{
     grid-column:1/-1;
     padding:1rem;
-    background:#f1f1f1;
+    background:var(--color-off-white);
 }
 @media (min-width:52rem){
     main{
