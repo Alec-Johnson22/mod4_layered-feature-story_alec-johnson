@@ -45,15 +45,61 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Example only</td>
-                        <td>Replace</td>
-                        <td>Replace</td>
-                        <td>Replace</td>
-                        <td>Replace</td>
-                        <td>Replace</td>
-                        <td>Replace</td>
+                        <td>.pull-quote</td>
+                        <td>Emphasis on quoted text</td>
+                        <td>Appears between paragraphs</td>
+                        <td>Edited margin-inline-start so that it showed visible indentation to separate itself from the paragraph content, but wouldn't be covered by the sticky heading</td>
+                        <td>Layered above other nearly content, set to a z-index of 10 (layer-raised)</td>
+                        <td>Returns to normal flow and default margin below 52rem</td>
+                        <td>Browser tests at various viewport sizes to show indentation, proper layering and no overflow</td>
+                    </tr>
+                    <tr>
+                        <td>.story-guide</td>
+                        <td>Navigation aid for the main content</td>
+                        <td>Appears as a sidebar in the normal flow, and becomes sticky when scrolling in both small and large viewports</td>
+                        <td>Used a sticky positioning to keep it visible while scrolling</td>
+                        <td>Set to a z-index of 20 (layer-sticky) within the main content area</td>
+                        <td>Continues to be sticky when viewport smaller than 52rem, scroll-margin-block-start set to 11rem to adjust for the smaller viewports</td>
+                        <td>Browser tests at various viewport sizes to show sticky behavior and proper layering</td>
+                    </tr>
+                    <tr>
+                        <td>.feature-figure (clip path)</td>
+                        <td>Displays mean feature image for the page</td>
+                        <td>Would display as a rectangular image</td>
+                        <td>Used a polygon clip-path to create a custom shape for the feature figure</td>
+                        <td>Has no stacking context, therefore has default layering</td>
+                        <td>@supports allow image fallback</td>
+                        <td>Browser tests to verify image displays as intended</td>
+                    </tr>
+                    <tr>
+                        <td>.feature-figure (border radius)</td>
+                        <td>Displays mean feature image for the page</td>
+                        <td>Would display as a rectangular image</td>
+                        <td>Adjusted border radius for a more squared-off appearance to match the sharper edges of the clip-path, still maintains a slightly rounded edge</td>
+                        <td>Has no stacking context, therefore has default layering</td>
+                        <td>@supports allow image fallback</td>
+                        <td>Browser tests to verify image displays as intended</td>
+                    </tr>
+                    <tr>
+                        <td>.feature-header</td>
+                        <td>Holds article title, sub--title and badge</td>
+                        <td>Stacks vertically by default</td>
+                        <td>position: relative to act as an anchor for the badge, which is set to position: absolute</td>
+                        <td>It is the containing block for the badge</td>
+                        <td>Remains in normal flow</td>
+                        <td>Browser tests to verify header displays as intended at various viewport sizes</td>
+                    </tr>
+                    <tr>
+                        <td>.shape-portrait</td>
+                        <td>Provides an image alongside the concluding paragraph</td>
+                        <td>Would display as a rectangular image</td>
+                        <td>shape-outside:circle, float and shape-margin, provides a circular margin around image for text to wrap around</td>
+                        <td>Contributes to the layout's text flow</td>
+                        <td>Would fallback to a rectangular image in normal flow for browsers that don't support shape-outside</td>
+                        <td>Browser tests to verify image displays as intended at various viewport sizes</td>
                     </tr>
                 </tbody>
             </table>
+            <a href="index.html">Back to the story</a>
         </body>
         </html>

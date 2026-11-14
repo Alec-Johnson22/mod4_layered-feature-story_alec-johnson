@@ -79,6 +79,9 @@ body{
     font-family:var(--font-tag);
     font-weight:700;
 }
+/*#section-one h2, #section-two h2{
+    scroll-margin-block-start:6rem;
+}*/
 h1, h2 {
     margin-block-start:0;
     font-family:var(--font-display);
@@ -96,12 +99,16 @@ article{
 article section{
     display:flow-root;
     margin-block:3rem;
-    scroll-margin-block-start:6rem;
+    scroll-margin-block-start:11rem;
 }
 .story-guide{
     align-self:start;
     padding:1rem;
     border:1px solid var(--color-border);
+    position:sticky;
+    z-index:var(--layer-sticky);
+    inset-block-start:0;
+    background:var(--color-surface);
 }
 .story-guide a{
     display:block;
@@ -112,7 +119,13 @@ article section{
     margin:0;
     padding:1rem;
     border:1px solid var(--color-border);
-    border-radius:var(--radius);
+    border-radius:.2rem;
+    width: 100%;
+    background:var(--color-action);
+    color:var(--color-off-white);
+}
+.feature-figure a{
+    color:var(--color-off-white);
 }
 img{
     display:block;
@@ -147,19 +160,21 @@ img{
     .pull-quote{
         position:relative;
         z-index:var(--layer-raised);
-        margin-inline-start:-4rem;
+        margin-inline-start:2rem;
         background:var(--color-surface);;
     }
     @supports (shape-outside:circle(50%)){
         .shape-portrait{
             float:inline-start;
             shape-outside:circle(50%);
-            shape-margin:1rem;}
+            shape-margin:.75rem;}
         }
     }
     @supports (clip-path:polygon(0 0)){
         .feature-figure img{
-            clip-path:polygon(0 0,100% 5%,94% 100%,6% 94%);}
+            /*clip-path:polygon(0 0,100% 5%,94% 100%,6% 94%);*/
+            clip-path: polygon(100% 100%, 91.44% 59.11%, 100% 74.14%, 100% 20.43%, 91.44% 31.03%, 100% 0%, 0% 0%, 8.09% 31.03%, 0% 20%, 0% 74.14%, 8.09% 60.5%, 0% 100%);
+        }
         }
         :focus-visible{
             outline:.2rem solid var(--color-accent);
